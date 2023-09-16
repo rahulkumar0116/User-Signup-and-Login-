@@ -1,15 +1,9 @@
+import React from 'react'
 
-const ProfilePage = ({params}) => {
+const HomePage = () => {
   return (
-    <div className='flex flex-col items-center justify-center min-h-screen py-2'>
-        <h1>ProfilePage
-        </h1>
-        <p className="text-4xl">
-            Profile <span className="p-2 rounded-lg bg-orange-600">{params.id}
-                    </span>
-        </p>
-        </div>
+    <div className=' flex justify-center'>profile is Here</div>
   )
 }
 
-export default ProfilePage
+export default HomePage

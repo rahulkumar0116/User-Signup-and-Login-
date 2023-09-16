@@ -3,6 +3,7 @@ import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
 import { toast } from "react-hot-toast";
 import axios from "axios";
+import Link from "next/link";
 
 
 const Login =()=> {
@@ -19,7 +20,7 @@ const Login =()=> {
     const onLogin = async () => {
         try {
             setLoading(true);
-            const response = await axios.post("/src/api/users/login", user);
+            const response = await axios.post("/api/user/login", user);
             console.log("Login success", response.data);
             toast.success("Login success");
             router.push("/profile");
@@ -98,11 +99,13 @@ const Login =()=> {
               </button>
             </div>
             <div>
-              <button 
+              {/* <button 
                 className=" flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                >
                <a href="/signup">SignUp here</a>
-              </button>
+              </button> */}
+              <Link href="/signup" className=" flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+               >SignUp Here</Link>
             </div>
           </form>
         </div>
